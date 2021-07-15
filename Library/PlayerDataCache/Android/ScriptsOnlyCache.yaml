@@ -1,7 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Readme
+    - NodeDataPlotter
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
@@ -21,8 +21,11 @@ ScriptsOnlyBuild:
     Unity.XR.Oculus.dll:
     - Unity.XR.Oculus.OculusLoader
     - Unity.XR.Oculus.OculusSettings
+    Unity.XR.WindowsMixedReality.Editor.dll:
+    - UnityEditor.XR.WindowsMR.WindowsMRPackageSettings
     Unity.XR.WindowsMixedReality.dll:
     - UnityEngine.XR.WindowsMR.WindowsMRLoader
+    - UnityEngine.XR.WindowsMR.WindowsMRSettings
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -48,6 +51,8 @@ ScriptsOnlyBuild:
     - Class: 43
       Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
@@ -76,9 +81,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2678}
     - Class: 114
-      Script: {instanceID: 3938}
+      Script: {instanceID: 3772}
     - Class: 114
-      Script: {instanceID: 4070}
+      Script: {instanceID: 3940}
+    - Class: 114
+      Script: {instanceID: 4072}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -566,6 +573,12 @@ ScriptsOnlyBuild:
     className: WindowsMRSettings
   - hash:
       serializedVersion: 2
+      Hash: f1cd1f40ff3087fd49a33f526113fa53
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NodeDataPlotter
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -981,4 +994,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/VRNode.unity
-  playerPath: C:/Users/Urjee/Desktop/VRTest-ComplexGraph.apk
+  playerPath: C:/Users/Urjee/Desktop/Lamina Cribrosa Graph.apk
