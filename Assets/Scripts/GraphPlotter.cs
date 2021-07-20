@@ -24,21 +24,28 @@ public class GraphPlotter : MonoBehaviour
     public string zName;
 
     // Indices for element data columns
-    public int columnEdge = 0;
-    public int columnFrom = 1;
-    public int columnTo = 2;
+    public int columnX1 = 0;
+    public int columnY1 = 1;
+    public int columnZ1 = 2;
+    public int columnX2 = 3;
+    public int columnY2 = 4;
+    public int columnZ2 = 5;
 
     // Element data column names
-    public string edgeNumbers;
-    public string fromName;
-    public string toName;
+    public string x1Name;
+    public string y1Name;
+    public string z1Name;
+    public string x2Name;
+    public string y2Name;
+    public string z2Name;
 
-   // public float graphScale = 10;   // Toggle the scale of the graph
+    // public float graphScale = 10;   // Toggle the scale of the graph
 
     public GameObject NodePrefab;  // Prefab for data points to be instantiated
     public GameObject NodeHolder;  // Object to contain instantiated prefabs
 
-    public LineRenderer EdgePrefab;   // Prefab for edge data points to be instantiated\
+    public LineRenderer EdgePrefab;   // Prefab for edge data points to be instantiated
+    public GameObject EdgeHolder;
 
     // Start is called before the first frame update
     void Start()
@@ -82,12 +89,19 @@ public class GraphPlotter : MonoBehaviour
         float zMin = FindMinValue(zName);
 
         // Assign column name from columnEdgeList to Name variables
-        edgeNumbers = columnEdgeList[columnEdge];
-        fromName = columnEdgeList[columnFrom];
-        toName = columnEdgeList[columnTo];
+        x1Name = columnEdgeList[columnX1];
+        y1Name = columnEdgeList[columnY1];
+        z1Name = columnEdgeList[columnZ1];
+        x2Name = columnEdgeList[columnX2];
+        y2Name = columnEdgeList[columnY2];
+        z2Name = columnEdgeList[columnZ2];
+
+        //EdgePrefab = GetComponent<LineRenderer>();
+        EdgePrefab.positionCount = 2;
+        
 
         // Loop through nodeDataList
-        for (var i = 0; i < nodeDataList.Count; i++) {
+        /**for (var i = 0; i < nodeDataList.Count; i++) {
             // Get normalized values in nodeDataList at ith "row", in "column" Name
             float x = Convert.ToSingle(nodeDataList[i][xName]);     // - xMin)/(xMax - xMin);
             float y = Convert.ToSingle(nodeDataList[i][yName]);     // - yMin)/(yMax - yMin);
@@ -99,6 +113,35 @@ public class GraphPlotter : MonoBehaviour
 
             string nodeName = "" + nodeDataList[i][nodeNumbers];    // Label each Node with its corresponding number
             nodePoint.transform.name = nodeName;     // Assign names to the prefabs
+
+        }   // End of for loop for nodeDataList**/
+
+        // Loop through edgeDataList
+        for (var i = 0; i < edgeDataList.Count; i++)
+        {
+            // Get normalized values in nodeDataList at ith "row", in "column" Name
+            float x1 = Convert.ToSingle(edgeDataList[i][x1Name]);     // - xMin)/(xMax - xMin);
+            float y1 = Convert.ToSingle(edgeDataList[i][y1Name]);     // - yMin)/(yMax - yMin);
+            float z1 = Convert.ToSingle(edgeDataList[i][z1Name]);     //- zMin)/(zMax - zMin);
+            float x2 = Convert.ToSingle(edgeDataList[i][x2Name]);     // - xMin)/(xMax - xMin);
+            float y2 = Convert.ToSingle(edgeDataList[i][y2Name]);     // - yMin)/(yMax - yMin);
+            float z2 = Convert.ToSingle(edgeDataList[i][z2Name]);     //- zMin)/(zMax - zMin);
+
+            /**GameObject node1 = Instantiate(NodePrefab, new Vector3(x1, y1, z1), Quaternion.identity);
+            GameObject node2 = Instantiate(NodePrefab, new Vector3(x2, y2, z2), Quaternion.identity);
+            node1.transform.parent = NodeHolder.transform;  // Make NodeHolder the parent of nodePoint
+            node2.transform.parent = NodeHolder.transform;  // Make NodeHolder the parent of nodePoint
+
+            Transform firstNode = node1.transform;
+            Transform secondNode = node2.transform;
+
+            DrawEdge(firstNode, secondNode);**/
+
+            // Instantiate the GameObject with coordinates defined above
+            //EdgePrefab = GetComponent<LineRenderer>();
+            EdgePrefab.SetPosition(0, new Vector3(x1, y1, z1));
+            EdgePrefab.SetPosition(1, new Vector3(x2, y2, z2));
+
 
         }   // End of for loop for nodeDataList
 
