@@ -44,8 +44,10 @@ public class GraphPlotter : MonoBehaviour
     public GameObject NodePrefab;  // Prefab for data points to be instantiated
     public GameObject NodeHolder;  // Object to contain instantiated prefabs
 
-    public LineRenderer EdgePrefab;   // Prefab for edge data points to be instantiated
-    public GameObject EdgeHolder;
+    //public LineRenderer EdgePrefab;   // Prefab for edge data points to be instantiated
+    public LineRenderer lineComponent;
+    public GameObject EdgePrefab;   // Prefab for edge data points to be instantiated
+    //public GameObject EdgeHolder;  // Object to contain instantiated prefabs
 
     // Start is called before the first frame update
     void Start()
@@ -97,11 +99,11 @@ public class GraphPlotter : MonoBehaviour
         z2Name = columnEdgeList[columnZ2];
 
         //EdgePrefab = GetComponent<LineRenderer>();
-        EdgePrefab.positionCount = 2;
+        //EdgePrefab.positionCount = 2;
         
 
         // Loop through nodeDataList
-        /**for (var i = 0; i < nodeDataList.Count; i++) {
+        for (var i = 0; i < nodeDataList.Count; i++) {
             // Get normalized values in nodeDataList at ith "row", in "column" Name
             float x = Convert.ToSingle(nodeDataList[i][xName]);     // - xMin)/(xMax - xMin);
             float y = Convert.ToSingle(nodeDataList[i][yName]);     // - yMin)/(yMax - yMin);
@@ -114,7 +116,7 @@ public class GraphPlotter : MonoBehaviour
             string nodeName = "" + nodeDataList[i][nodeNumbers];    // Label each Node with its corresponding number
             nodePoint.transform.name = nodeName;     // Assign names to the prefabs
 
-        }   // End of for loop for nodeDataList**/
+        }   // End of for loop for nodeDataList
 
         // Loop through edgeDataList
         for (var i = 0; i < edgeDataList.Count; i++)
@@ -127,60 +129,21 @@ public class GraphPlotter : MonoBehaviour
             float y2 = Convert.ToSingle(edgeDataList[i][y2Name]);     // - yMin)/(yMax - yMin);
             float z2 = Convert.ToSingle(edgeDataList[i][z2Name]);     //- zMin)/(zMax - zMin);
 
-            /**GameObject node1 = Instantiate(NodePrefab, new Vector3(x1, y1, z1), Quaternion.identity);
-            GameObject node2 = Instantiate(NodePrefab, new Vector3(x2, y2, z2), Quaternion.identity);
-            node1.transform.parent = NodeHolder.transform;  // Make NodeHolder the parent of nodePoint
-            node2.transform.parent = NodeHolder.transform;  // Make NodeHolder the parent of nodePoint
+            GameObject edgeChild = new GameObject();
+            edgeChild.AddComponent<LineRenderer>();
+            lineComponent = edgeChild.GetComponent<LineRenderer>();
+            lineComponent.SetPosition(0, new Vector3(x1, y1, z1));
+            lineComponent.SetPosition(1, new Vector3(x2, y2, z2));
+            edgeChild.transform.parent = EdgePrefab.transform;
 
-            Transform firstNode = node1.transform;
-            Transform secondNode = node2.transform;
-
-            DrawEdge(firstNode, secondNode);**/
-
-            // Instantiate the GameObject with coordinates defined above
-            //EdgePrefab = GetComponent<LineRenderer>();
-            EdgePrefab.SetPosition(0, new Vector3(x1, y1, z1));
-            EdgePrefab.SetPosition(1, new Vector3(x2, y2, z2));
-
-
-        }   // End of for loop for nodeDataList
-
-        // Code to draw edges and nodes in double for loop
-        /**for(var i = 0; i < edgeDataList.Count; i++) {
-            int from = Convert.ToInt32(edgeDataList[i][fromName]);
-            int to = Convert.ToInt32(edgeDataList[i][toName]);
-            Transform nodeFrom = null;
-            Transform nodeTo = null;
-
-            for (var j = 0; j < nodeDataList.Count; j++) {
-                if(from == Convert.ToInt32(nodeDataList[j][nodeNumbers])) {
-                    GameObject nodeFromPoint = Instantiate(NodePrefab,
-                        new Vector3(Convert.ToSingle(nodeDataList[j][xName]), Convert.ToSingle(nodeDataList[j][yName]), Convert.ToSingle(nodeDataList[j][zName])), Quaternion.identity);
-                    nodeFromPoint.transform.parent = NodeHolder.transform;
-                    nodeFrom = nodeFromPoint.transform;
-
-                    string nodeFromName = "" + nodeDataList[j][nodeNumbers];
-                    nodeFromPoint.transform.name = nodeFromName;
-                }
-                if(to == Convert.ToInt32(nodeDataList[j][nodeNumbers])) {
-                    GameObject nodeToPoint = Instantiate(NodePrefab,
-                        new Vector3(Convert.ToSingle(nodeDataList[j][xName]), Convert.ToSingle(nodeDataList[j][yName]), Convert.ToSingle(nodeDataList[j][zName])), Quaternion.identity);
-                    nodeToPoint.transform.parent = NodeHolder.transform;
-                    nodeTo = nodeToPoint.transform;
-
-                    string nodeToName = "" + nodeDataList[j][nodeNumbers];
-                    nodeToPoint.transform.name = nodeToName;
-                }
-            }
-            DrawEdge(nodeFrom, nodeTo);
-        }   // End of for loop for edgeDataList **/
+        }   // End of for loop for edgeDataList
     }   // End of Start()
 
-    void DrawEdge(Transform firstT, Transform secondT)
+    /**void DrawEdge(Transform firstT, Transform secondT)
     {
         EdgePrefab.SetPosition(0, firstT.position);
         EdgePrefab.SetPosition(1, secondT.position);
-    }
+    }**/
 
     private float FindMaxValue(string columnName)
     {
