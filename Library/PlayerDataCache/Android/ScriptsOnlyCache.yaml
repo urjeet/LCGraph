@@ -111,7 +111,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4894}
     - Class: 114
-      Script: {instanceID: 19854}
+      Script: {instanceID: 5180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -860,7 +860,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GraphComponent
+    className: GizmosGraphComponent
   - hash:
       serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
@@ -953,6 +953,12 @@ ScriptsOnlyBuild:
     className: OnScreenStick
   - hash:
       serializedVersion: 2
+      Hash: 1291fd3230a761a68bcf906ad23ebacd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ContinuousMovement
+  - hash:
+      serializedVersion: 2
       Hash: c108f689511ec9c2b6c82c311fc2f3ba
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation
@@ -1029,12 +1035,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit.UI
     className: XRUIInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 1291fd3230a761a68bcf906ad23ebacd
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ContinuousMovement
   platform: 13
   scenePathNames:
   - Assets/Scenes/VRNode.unity
