@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ContinuousMovement
     - GraphPlotter
     - HandPresence
     Unity.InputSystem.dll:
@@ -11,7 +12,6 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.Interaction.Toolkit.dll:
     - UnityEngine.XR.Interaction.Toolkit.LocomotionSystem
-    - UnityEngine.XR.Interaction.Toolkit.TeleportationProvider
     - UnityEngine.XR.Interaction.Toolkit.XRController
     - UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor
     - UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable
@@ -33,10 +33,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -103,17 +101,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2680}
     - Class: 114
-      Script: {instanceID: 3940}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 4072}
+      Script: {instanceID: 3942}
     - Class: 114
-      Script: {instanceID: 4426}
+      Script: {instanceID: 4074}
     - Class: 114
-      Script: {instanceID: 4490}
+      Script: {instanceID: 4492}
     - Class: 114
-      Script: {instanceID: 4892}
+      Script: {instanceID: 4894}
     - Class: 114
-      Script: {instanceID: 18344}
+      Script: {instanceID: 19854}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -123,6 +121,8 @@ ScriptsOnlyBuild:
     - Class: 136
       Script: {instanceID: 0}
     - Class: 137
+      Script: {instanceID: 0}
+    - Class: 143
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -369,6 +369,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit
     className: XRRig
+  - hash:
+      serializedVersion: 2
+      Hash: 0a34c046e93c3edeb3773627fdea0614
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HandPresence
   - hash:
       serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
@@ -1025,10 +1031,10 @@ ScriptsOnlyBuild:
     className: XRUIInputModule
   - hash:
       serializedVersion: 2
-      Hash: 0a34c046e93c3edeb3773627fdea0614
+      Hash: 1291fd3230a761a68bcf906ad23ebacd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: HandPresence
+    className: ContinuousMovement
   platform: 13
   scenePathNames:
   - Assets/Scenes/VRNode.unity
