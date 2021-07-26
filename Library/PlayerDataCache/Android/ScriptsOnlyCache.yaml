@@ -43,7 +43,7 @@ ScriptsOnlyBuild:
     UnityEngine.SpatialTracking.dll:
     - UnityEngine.SpatialTracking.TrackedPoseDriver
   sceneClasses:
-    Assets/Scenes/VRNode.unity:
+    Assets/Scenes/LCGraph.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -263,7 +263,7 @@ ScriptsOnlyBuild:
     className: XRInteractorLineVisual
   - hash:
       serializedVersion: 2
-      Hash: 14e2945426be91309ad84f120ca8c7de
+      Hash: 382a15d0abc75933b3d83acb7a5cbafb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GraphPlotter
@@ -1037,5 +1037,5 @@ ScriptsOnlyBuild:
     className: XRUIInputModule
   platform: 13
   scenePathNames:
-  - Assets/Scenes/VRNode.unity
+  - Assets/Scenes/LCGraph.unity
   playerPath: C:/Users/Urjee/Desktop/Lamina Cribrosa Graph.apk
