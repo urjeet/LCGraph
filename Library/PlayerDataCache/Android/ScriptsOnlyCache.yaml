@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - ContinuousMovement
     - GraphPlotter
     - HandPresence
+    - Readme
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
@@ -25,11 +26,8 @@ ScriptsOnlyBuild:
     Unity.XR.Oculus.dll:
     - Unity.XR.Oculus.OculusLoader
     - Unity.XR.Oculus.OculusSettings
-    Unity.XR.WindowsMixedReality.Editor.dll:
-    - UnityEditor.XR.WindowsMR.WindowsMRPackageSettings
     Unity.XR.WindowsMixedReality.dll:
     - UnityEngine.XR.WindowsMR.WindowsMRLoader
-    - UnityEngine.XR.WindowsMR.WindowsMRSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI

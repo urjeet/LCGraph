@@ -153,10 +153,15 @@ public class GraphPlotter : MonoBehaviour
             lineComponent = edgeChild.GetComponent<LineRenderer>();
             lineComponent.SetPosition(0, new Vector3(x1, y1, z1));
             lineComponent.SetPosition(1, new Vector3(x2, y2, z2));
-            lineComponent.SetWidth(2.0f, 2.0f);
+            lineComponent.SetWidth(4.0f, 4.0f);
             if (flowRateMap){
                 Color edgeColor = new Color(red, green, blue);
                 lineComponent.SetColors(edgeColor, edgeColor);
+                Material lineMaterial = new Material(Shader.Find("UI/Default"));
+                lineComponent.material = lineMaterial;
+            }else{
+                Color defaultColor = new Color(1, 0, 0, 1);     // Default color for edges -> red
+                lineComponent.SetColors(defaultColor, defaultColor);
                 Material lineMaterial = new Material(Shader.Find("UI/Default"));
                 lineComponent.material = lineMaterial;
             }
