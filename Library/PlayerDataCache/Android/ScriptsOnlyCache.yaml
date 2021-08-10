@@ -1,5 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp-Editor.dll:
+    - ReadmeEditor
     Assembly-CSharp.dll:
     - ContinuousMovement
     - GraphPlotter
@@ -11,6 +13,8 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.Timeline.Editor.dll:
+    - TimelineProjectSettings
     Unity.XR.Interaction.Toolkit.dll:
     - UnityEngine.XR.Interaction.Toolkit.LocomotionSystem
     - UnityEngine.XR.Interaction.Toolkit.XRController
@@ -26,8 +30,11 @@ ScriptsOnlyBuild:
     Unity.XR.Oculus.dll:
     - Unity.XR.Oculus.OculusLoader
     - Unity.XR.Oculus.OculusSettings
+    Unity.XR.WindowsMixedReality.Editor.dll:
+    - UnityEditor.XR.WindowsMR.WindowsMRPackageSettings
     Unity.XR.WindowsMixedReality.dll:
     - UnityEngine.XR.WindowsMR.WindowsMRLoader
+    - UnityEngine.XR.WindowsMR.WindowsMRSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -349,12 +356,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit.Inputs
     className: InputActionManager
-  - hash:
-      serializedVersion: 2
-      Hash: 5f170942ee57c7a568f5bcfc7521adea
-    assemblyName: UnityEngine.TestRunner.dll
-    namespaceName: UnityEngine.TestTools
-    className: EnumerableTestState
   - hash:
       serializedVersion: 2
       Hash: 8afd0435cb508da5e2cae86937da9045
@@ -1036,4 +1037,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/LCGraph.unity
-  playerPath: C:/Users/Urjee/Desktop/Lamina Cribrosa Graph.apk
+  playerPath: C:/Users/Urjeet/Desktop/TestCheck.apk
