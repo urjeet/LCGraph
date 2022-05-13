@@ -29,7 +29,7 @@ For the Edges:
 3. If the user requests a flow rate representation, then each edge is set to the color of its RGB value representing its flow rate where cooler colors represent lower flow rates and warmer colors represent higher flow rates. Otherwise, each edge is set to the default color of base red. 
 4. Each edge is made a child object of the `EdgePrefab` object.
 
--- This file also includes two functions `FindMaxValue()` and `FindMinValue()` that are used to normalize the graph in order to make it easier to view in the VR scene.
+This file also includes two functions `FindMaxValue()` and `FindMinValue()` that are used to normalize the graph in order to make it easier to view in the VR scene.
 
 ---
 
