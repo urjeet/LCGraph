@@ -19,6 +19,8 @@ Unity Game Engine was used to develop the complete virtual reality framework. Th
 
 `CSVReader.cs` is the main program that parses the different databases. While parsing the data, it converts values to ints/floats if possible and returns a `List<Dictionary<string, object>>`. 
 
+---
+
 `GraphPlotter.cs` uses `CSVReader.cs` to plot the respective nodes and edges. This is done by first initializing the necessary GameObjects which are the Prefabs and an object to contain the instantiated Prefabs. For the nodes, this includes `NodePrefab` and `NodeHolder` and for the edges, this includes `lineComponent` and `EdgePrefab`. In the `Start()` function, which is called before the first frame update, the node and edge data is read in as lists.<br>
 For the Nodes:
 1. After extracting the x, y, and z coordinates for each node from the `nodeDataList`, a new GameObject is instantiated using the Prefab and a `Vector3` object to represent the coordinates.
@@ -31,6 +33,8 @@ For the Edges:
 4. Each edge is made a child object of the `EdgePrefab` object.
 
 -- This file also includes two functions `FindMaxValue()` and `FindMinValue()` that are used to normalize the graph in order to make it easier to view in the VR scene.
+
+---
 
 ## Executing and Understanding the Output
 
