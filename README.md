@@ -19,14 +19,12 @@ Unity Game Engine was used to develop the complete virtual reality framework. Th
 
 `CSVReader.cs` is the main program that parses the different databases. While parsing the data, it converts values to ints/floats if possible and returns a `List<Dictionary<string, object>>`. 
 
-`GraphPlotter.cs` uses `CSVReader.cs` to plot the respective nodes and edges. This is done by first initializing the necessary `GameObject`s which are the Prefabs and an object to contain the instantiated Prefabs. For the nodes, this includes `NodePrefab` and `NodeHolder` and for the edges, this includes `lineComponent` and `EdgePrefab`. In the `Start()` function, which is called before the first frame update, the node and edge data is read in as lists. 
-
+`GraphPlotter.cs` uses `CSVReader.cs` to plot the respective nodes and edges. This is done by first initializing the necessary GameObjects which are the Prefabs and an object to contain the instantiated Prefabs. For the nodes, this includes `NodePrefab` and `NodeHolder` and for the edges, this includes `lineComponent` and `EdgePrefab`. In the `Start()` function, which is called before the first frame update, the node and edge data is read in as lists.<br>
 For the Nodes:
-    After extracting the x, y, and z coordinates for each node from the `nodeDataList`, a new `GameObject` is instantiated using the Prefab and a `Vector3` object to represent the coordinates. Lastly, each node is made a child object of the `NodeHolder` object.
-
+    After extracting the x, y, and z coordinates for each node from the `nodeDataList`, a new GameObject is instantiated using the Prefab and a `Vector3` object to represent the coordinates. Lastly, each node is made a child object of the `NodeHolder` object.<br>
 For the Edges:
-    After extracting the x-coordinates, y-coordinates, z-coordinates (starting and ending positions), flow rate, and the RGB values for each edge from the `edgeDataList`, a new `GameObject` is instantiated with the object type as `LineRenderer`. Each `lineComponent` is given a starting and ending position correlating with the six coordinates as `Vector3` objects. The `lineComponent` is also given a standardized weight. Next, if the user requests a flow rate representation, then each edge is set to the color of its RGB value representing its flow rate where cooler colors represent lower flow rates and warmer colors represent higher flow rates. Otherwise, each edge is set to the default color of base red. Lastly, each edge is made a child object of the `EdgePrefab` object.
-    
+    After extracting the x-coordinates, y-coordinates, z-coordinates (starting and ending positions), flow rate, and the RGB values for each edge from the `edgeDataList`, a new GameObject is instantiated with the object type as `LineRenderer`. Each `lineComponent` is given a starting and ending position correlating with the six coordinates as `Vector3` objects. The `lineComponent` is also given a standardized weight. Next, if the user requests a flow rate representation, then each edge is set to the color of its RGB value representing its flow rate where cooler colors represent lower flow rates and warmer colors represent higher flow rates. Otherwise, each edge is set to the default color of base red. Lastly, each edge is made a child object of the `EdgePrefab` object.
+
 This file also includes two functions `FindMaxValue()` and `FindMinValue()` that are used to normalize the graph in order to make it easier to view in the VR scene.
 
 ## Executing and Understanding the Output
