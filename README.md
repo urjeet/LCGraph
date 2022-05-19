@@ -45,7 +45,7 @@ This file also includes two functions `FindMaxValue()` and `FindMinValue()` that
 * Pinch: Press the trigger button on the controller
 * Grip: Press the inside grip button on the controller
 
-Each animation is set by the intensity of the key press where the intensity is a float. If the key is not pressed at all then the intensity is set to 0. This is continuously monitored by the `Update()` function which calls `UpdateHandAnimation()`.
+These actions were mapped to the individual keys on the controller by using Unity's Blend Tree feature. Each animation is set by the intensity of the key press where the intensity is a float. If the key is not pressed at all then the intensity is set to 0. This is continuously monitored by the `Update()` function which calls `UpdateHandAnimation()`.
 
 ## Executing and Understanding the Output
 
