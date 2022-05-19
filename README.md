@@ -14,6 +14,10 @@ Unity Game Engine was used to develop the complete virtual reality framework. Th
 
 ## Source Files and Their Roles
 
+All source files are stored in the `Assets/Scripts/` folder. The following files are of key importance:
+
+---
+
 `CSVReader.cs` is the main program that parses the different databases. While parsing the data, it converts values to ints/floats if possible and returns a `List<Dictionary<string, object>>`. 
 
 ---
