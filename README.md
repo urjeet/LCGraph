@@ -37,9 +37,15 @@ This file also includes two functions `FindMaxValue()` and `FindMinValue()` that
 
 ---
 
-`ContinuousMovement.cs` is a script that controls the overall movement and fluidity within the application. This is done by simultaneously updating the right and left controllers through the `Update()` function which is called once per frame. The right controller enables movement in the x and z directions while the left controller enables movement in the y direction. The `speed` variable controls the rate of movement. The `FixedUpdate()` function handles head yaw which uses the headset's camera's rotation to control the direction of movement on the x and z axes.
+`ContinuousMovement.cs` is the script that controls the overall movement and fluidity within the application. This is done by simultaneously updating the right and left controllers through the `Update()` function which is called once per frame. The right controller enables movement in the x and z directions while the left controller enables movement in the y direction. The `speed` variable controls the rate of movement. The `FixedUpdate()` function handles head yaw which uses the headset's camera's rotation to control the direction of movement on the x and z axes.
 
 ---
+
+`HandPresence.cs` is the script that controls the hand models. This is done by first ensuring that the controller devices are connected, instantiating prefabs for each controller, and then transforming them to resemble hands. These prefabs are given an `Animator` component that allows certain pressed keys to trigger animations. The `UpdateHandAnimation()` function receives the input from the controllers and then updates the animation accordingly. The "hands" can perform the following actions:
+* Pinch: Press the trigger button on the controller
+* Grip: Press the inside grip button on the controller
+
+Each animation is set by the intensity of the key press where the intensity is a float. If the key is not pressed at all then the intensity is set to 0. This is continuously monitored by the `Update()` function which calls `UpdateHandAnimation()`.
 
 ## Executing and Understanding the Output
 
