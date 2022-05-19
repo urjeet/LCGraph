@@ -37,6 +37,10 @@ This file also includes two functions `FindMaxValue()` and `FindMinValue()` that
 
 ---
 
+`ContinuousMovement.cs` is a script that controls the overall movement and fluidity within the application. This is done by simultaneously updating the right and left controllers through the `Update()` function which is called once per frame. The right controller enables movement in the x and z directions while the left controller enables movement in the y direction. The `speed` variable controls the rate of movement. The `FixedUpdate()` function handles head yaw which uses the headset's camera's rotation to control the direction of movement on the x and z axes.
+
+---
+
 ## Executing and Understanding the Output
 
 **EXECUTION:**
