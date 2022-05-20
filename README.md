@@ -51,7 +51,7 @@ These actions were mapped to the individual keys on the controller by using Unit
 
 The applications are available to download below. The first application features the visualization of the default model where all blood vessels are a standard "red" color. The second application features the visualization of the flow rate model which shows the varying blood flow rates of each individual blood vessel using a color spectrum where cooler colors represent lower flow rates and warmer colors represent higher flow rates. Both of these applications can be deployed onto an Oculus Quest 2 and launched from the App Launcher through the "Installed" tab in the main drop down menu.
 
-**[DEFAULT MODEL](https://drive.google.com/file/d/1S_3W6VrLGzBVDeXur-26u91x7k3a8w56/view?usp=sharing)**
+**[DEFAULT MODEL](https://drive.google.com/file/d/1S_3W6VrLGzBVDeXur-26u91x7k3a8w56/view?usp=sharing)**<br>
 **[FLOW RATE MODEL](https://drive.google.com/file/d/1nhed0zqlIU5XrbgmDNtrwUAAmEgY6CbS/view?usp=sharing)**
 
 ***
