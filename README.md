@@ -56,5 +56,4 @@ The applications are available to download below. The first application features
 
 ***
 
-## Footnotes
 
